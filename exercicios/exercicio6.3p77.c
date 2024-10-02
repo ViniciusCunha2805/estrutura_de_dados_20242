@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <math.h>
 
+typedef struct{
+    int x; 
+    int y;
+}t_ponto;
+
 struct t_ponto {
     int x; 
     int y;
