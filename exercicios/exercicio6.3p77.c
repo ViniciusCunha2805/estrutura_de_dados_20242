@@ -3,22 +3,22 @@
 #include <math.h>
 
 typedef struct{
-    int x; 
-    int y;
-}t_ponto;
+        int x; 
+        int y;
+        }t_ponto;
 
 struct t_ponto {
     int x; 
     int y;
 };
 
-double distancia(struct t_ponto A, struct t_ponto B){
+double distancia( t_ponto A,  t_ponto B){
     double dist = sqrt(pow((A.x - B.x), 2) + pow((A.y - B.y), 2));
     return dist;
 }
 
 int main(){
-    struct t_ponto P, Q;
+    t_ponto P, Q;
     int val;
     double d;
 
