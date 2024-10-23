@@ -2,4 +2,4 @@
 
 ### Diretório de Exercícios
 
-Exercícios desenvolvidos em C durante a disciplina.
+Exercícios desenvolvidos em C durante a disciplina de estrutura de dados.
