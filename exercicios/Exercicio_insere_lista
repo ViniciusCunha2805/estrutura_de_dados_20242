@@ -1,0 +1,35 @@
+Lista insereLista(Lista l, t_dado dado, int pos) {
+  if (pos < 0 || pos > l->tamanho) {
+    return l;
+  }
+
+  t_no no = (t_no)malloc(sizeof(struct tipo_no));
+  no->dado = dado;
+  no->anterior = NULL;
+  no->proximo = NULL;
+
+  if (l->tamanho == 0) {
+    l->primeiro = no;
+    l->ultimo = no;
+  } else if (pos == 0) {
+    no->proximo = l->primeiro;
+    l->primeiro->anterior = no;
+    l->primeiro = no;
+  } else if (pos == l->tamanho) {
+    no->anterior = l->ultimo;
+    l->ultimo->proximo = no;
+    l->ultimo = no;
+  } else {
+    t_no aux = l->primeiro;
+    for (int i = 0; i < pos; i++) {
+      aux = aux->proximo;
+    }
+    no->anterior = aux->anterior;
+    no->proximo = aux;
+    aux->anterior->proximo = no;
+    aux->anterior = no;
+  }
+
+  l->tamanho++;
+  return l;
+}
